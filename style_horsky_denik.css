@@ -1,0 +1,211 @@
+/* zakladni styl - flat design */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eef2ee;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* hlavicka */
+header {
+  background-color: #2e7d32;
+  color: white;
+  /* stejne odsazeni jako obsah v main, aby vse lezelo pod sebou */
+  padding: 15px max(20px, calc((100% - 1060px) / 2));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* navigace */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #c8e6c9;
+}
+
+/* hlavni obsah */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #2e7d32;
+}
+
+/* uvodni sekce na indexu */
+.uvod {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* mrizka s clanky */
+.mrizka {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.karta {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.karta:hover {
+  transform: translateY(-4px);
+}
+
+.karta img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.karta h3 {
+  margin: 10px 15px 5px 15px;
+}
+
+.karta p {
+  margin: 5px 15px 15px 15px;
+  font-size: 14px;
+}
+
+.karta a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.karta a:hover h3 {
+  color: #2e7d32;
+}
+
+/* detail clanku - text vlevo, aside vpravo */
+.obsah-clanku {
+  display: flex;
+  gap: 30px;
+}
+
+.obsah-clanku article {
+  flex: 3;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.obsah-clanku article img {
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 20px 0;
+}
+
+figcaption {
+  font-size: 13px;
+  color: #666666;
+}
+
+aside {
+  flex: 1;
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 10px 0;
+}
+
+mark {
+  background-color: #fff59d;
+}
+
+/* video a mapa */
+iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+}
+
+/* paticka */
+footer {
+  background-color: #333333;
+  color: white;
+  padding: 20px max(20px, calc((100% - 1060px) / 2));
+  margin-top: 30px;
+}
+
+footer a {
+  color: #a5d6a7;
+}
+
+footer h2 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer ul {
+  padding-left: 20px;
+}
+
+/* na mobilu dam aside pod clanek */
+@media (max-width: 700px) {
+  .obsah-clanku {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
